@@ -2,7 +2,6 @@
 
 namespace App\Action;
 
-use App\Tweet\Settings;
 use Interop\Container\ContainerInterface;
 use Zend\Expressive\Router\RouterInterface;
 use Zend\Expressive\Template\TemplateRendererInterface;

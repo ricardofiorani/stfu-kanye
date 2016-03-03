@@ -19,7 +19,8 @@ return [
         'factories' => [
             Application::class => ApplicationFactory::class,
             Helper\UrlHelper::class => Helper\UrlHelperFactory::class,
-            \App\Tweet\Settings::class => \App\Tweet\Factory\SettingsFactory::class,
+            \App\Tweet\API\Adapter\TwitterAPIConfig::class => \App\Tweet\API\Adapter\Factory\TwitterAPIConfigFactory::class,
+            \App\Tweet\API\Adapter\TwitterAPIAdapter::class => \App\Tweet\API\Adapter\Factory\TwitterAPIAdapterFactory::class,
         ],
     ],
 ];

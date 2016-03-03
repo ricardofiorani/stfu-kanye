@@ -6,10 +6,10 @@
  * Time: 20:24
  */
 
-namespace App\Tweet;
+namespace App\Tweet\API\Adapter;
 
 
-class Settings
+class TwitterAPIConfig
 {
     /**
      * @var array

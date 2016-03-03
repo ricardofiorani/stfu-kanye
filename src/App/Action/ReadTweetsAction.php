@@ -9,9 +9,8 @@
 namespace App\Action;
 
 
+use App\Tweet\API\Adapter\TwitterAPIAdapter;
 use App\Tweet\Repository\TweetRepository;
-use App\Tweet\Settings;
-use TwitterAPIExchange;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Zend\Diactoros\Response\JsonResponse;
@@ -19,33 +18,28 @@ use Zend\Expressive\Template\TemplateRendererInterface;
 
 class ReadTweetsAction
 {
-    /**
-     * @var TemplateRendererInterface
-     */
-    private $template;
-    /**
-     * @var Settings
-     */
-    private $twitterSettings;
+
     /**
      * @var TweetRepository
      */
     private $tweetRepository;
+    /**
+     * @var TwitterAPIAdapter
+     */
+    private $twitterAPIAdapter;
 
     /**
      * ReadTweetsAction constructor.
      * @param TemplateRendererInterface $template
-     * @param Settings $twitterSettings
      * @param TweetRepository $tweetRepository
+     * @param TwitterAPIAdapter $twitterAPIAdapter
      */
     public function __construct(
-        TemplateRendererInterface $template,
-        Settings $twitterSettings,
-        TweetRepository $tweetRepository
+        TweetRepository $tweetRepository,
+        TwitterAPIAdapter $twitterAPIAdapter
     ) {
-        $this->template = $template;
-        $this->twitterSettings = $twitterSettings;
         $this->tweetRepository = $tweetRepository;
+        $this->twitterAPIAdapter = $twitterAPIAdapter;
     }
 
     /**
@@ -57,20 +51,10 @@ class ReadTweetsAction
      */
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $next = null)
     {
-        $url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
-        $getfield = '?screen_name=kanyewest';
-        $requestMethod = 'GET';
+        $tweets = $this->twitterAPIAdapter->getTweets();
+        $count = $this->tweetRepository->insertTweetListIntoQueue($tweets);
 
-        $twitter = new TwitterAPIExchange($this->twitterSettings->getConfig());
-        $response = $twitter->setGetfield($getfield)
-            ->buildOauth($url, $requestMethod)
-            ->performRequest();
-
-
-        $this->tweetRepository->insertTweetListIntoQueue(json_decode($response));
-
-        return new JsonResponse(['Inserted']);
+        return new JsonResponse([$count . ' inserted']);
     }
-
 
 }

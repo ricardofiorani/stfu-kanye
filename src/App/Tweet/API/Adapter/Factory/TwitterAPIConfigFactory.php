@@ -6,23 +6,23 @@
  * Time: 20:24
  */
 
-namespace App\Tweet\Factory;
+namespace App\Tweet\API\Adapter\Factory;
 
 
-use App\Tweet\Settings;
+use App\Tweet\API\Adapter\TwitterAPIConfig;
 use Interop\Container\ContainerInterface;
 
-class SettingsFactory
+class TwitterAPIConfigFactory
 {
     /**
      * @param ContainerInterface $container
-     * @return Settings
+     * @return TwitterAPIConfig
      */
     public function __invoke(ContainerInterface $container)
     {
         $config = $container->get('config');
 
-        return new Settings($config['twitter']);
+        return new TwitterAPIConfig($config['twitter']);
     }
 
 }

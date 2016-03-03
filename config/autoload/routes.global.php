@@ -8,7 +8,10 @@ return [
         ],
         'factories' => [
             App\Action\HomePageAction::class => App\Action\HomePageFactory::class,
-            \App\Action\ReadTweetsAction::class => \App\Action\ReadTweetsFactory::class
+            App\Action\ReadTweetsAction::class => App\Action\ReadTweetsFactory::class,
+            App\Action\ReplyTweetsAction::class => App\Action\ReplyTweetsFactory::class,
+
+
         ],
     ],
 
@@ -29,6 +32,12 @@ return [
             'name' => 'api.tweets.read',
             'path' => '/api/tweets/read',
             'middleware' => App\Action\ReadTweetsAction::class,
+            'allowed_methods' => ['GET'],
+        ],
+        [
+            'name' => 'api.tweets.reply',
+            'path' => '/api/tweets/reply',
+            'middleware' => App\Action\ReplyTweetsAction::class,
             'allowed_methods' => ['GET'],
         ],
     ],
