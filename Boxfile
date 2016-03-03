@@ -9,9 +9,9 @@ web1:
   type: php
   version: 7
   php_extensions:
-    - pdo
-    - pdo_mysql
-    - curl
-    - json
+    - pdo
+    - pdo_mysql
+    - curl
+    - json
   stability: production
   httpd_document_root: public
