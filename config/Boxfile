@@ -1,0 +1,6 @@
+build:
+  exec:
+    - "composer install --no-interaction --prefer-source"
+    - "vendor/bin/doctrine orm:schema-tool:create"
+  lib_dir: vendor
+  reuse_libs: true
