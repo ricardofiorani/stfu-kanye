@@ -4,3 +4,10 @@ build:
     - "vendor/bin/doctrine orm:schema-tool:create"
   lib_dir: vendor
   reuse_libs: true
+
+web1:
+  name: web1
+  type: php
+  version: 7
+  stability: production
+  httpd_document_root: public
