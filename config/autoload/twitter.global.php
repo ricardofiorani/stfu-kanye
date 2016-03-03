@@ -9,9 +9,9 @@
 
 return [
     'twitter' => [
-        'oauth_access_token' => getenv('oauth_access_token'),
-        'oauth_access_token_secret' => getenv('oauth_access_token_secret'),
-        'consumer_key' => getenv('consumer_key'),
-        'consumer_secret' => getenv('consumer_secret')
+        'oauth_access_token' => getenv('OAUTH_ACCESS_TOKEN'),
+        'oauth_access_token_secret' => getenv('OAUTH_ACCESS_TOKEN_SECRET'),
+        'consumer_key' => getenv('CONSUMER_KEY'),
+        'consumer_secret' => getenv('CONSUMER_SECRET')
     ],
 ];
