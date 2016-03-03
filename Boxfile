@@ -1,17 +1,17 @@
 build:
-exec:
-- "composer install --no-interaction --prefer-source"
-lib_dir: vendor
-reuse_libs: true
+  exec:
+    - "composer install --no-interaction --prefer-source"
+  lib_dir: vendor
+  reuse_libs: true
 
 web1:
-name: web1
-type: php
-version: 7
-php_extensions:
-- pdo
-- pdo_mysql
-- curl
-- json
-stability: production
-httpd_document_root: public
+  name: web1
+  type: php
+  version: 7
+  php_extensions:
+    - pdo
+    - pdo_mysql
+    - curl
+    - json
+  stability: production
+  httpd_document_root: public
