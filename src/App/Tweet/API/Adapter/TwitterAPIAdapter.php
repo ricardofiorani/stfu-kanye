@@ -48,7 +48,7 @@ class TwitterAPIAdapter
         $url = 'https://api.twitter.com/1.1/statuses/update.json';
         $requestMethod = 'POST';
         $postfields = array(
-            'status' => '@kanyewest , please shut up.',
+            'status' => '@kanyewest , please shut the fuck up.',
             'in_reply_to_status_id' => $tweet->getTweetId(),
         );
         $twitterAPI = $this->getNewTwitterAPIExchange();
