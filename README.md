@@ -28,3 +28,7 @@ So, I'm using a service checker that will warn me when it happens.
 Below you can see the currently bot uptime
 
 ![alt text](https://www.statuscake.com/App/button/index.php?Track=O2ULsYrC5g "Uptime")
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/ricardofiorani/stfu-kanye/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
