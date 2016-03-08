@@ -1,3 +1,5 @@
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/ricardofiorani/stfu-kanye/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
 # stfu-kanye
 Let's help Kanye West to shut the fuck up
 
@@ -24,11 +26,3 @@ Yes.
 # Footnotes
 
 Currently the bot runs on a Pagodabox free plan, so Pagodabox likes to shut it down sometimes requiring me to login on their dashboard and wake the app up.
-So, I'm using a service checker that will warn me when it happens. 
-Below you can see the currently bot uptime
-
-![alt text](https://www.statuscake.com/App/button/index.php?Track=O2ULsYrC5g "Uptime")
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/ricardofiorani/stfu-kanye/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
