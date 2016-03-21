@@ -39,7 +39,12 @@ class ListTweetsAction
 
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $next = null)
     {
-        $response = new JsonResponse(array_map($this->tweetExtractor, $this->twitterRepository->findAll()));
+        $listing = $this->twitterRepository->findAll();
+        $newResponse = [
+            '_tweets' => array_map($this->tweetExtractor, $listing),
+            'count' => count($listing),
+        ];
+        $response = new JsonResponse($newResponse);
 
         return $next($request, $response);
     }
