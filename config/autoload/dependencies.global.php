@@ -14,6 +14,7 @@ return [
         'invokables' => [
             // Fully\Qualified\InterfaceName::class => Fully\Qualified\ClassName::class,
             Helper\ServerUrlHelper::class => Helper\ServerUrlHelper::class,
+            App\Tweet\Extractor\TweetExtractor::class => App\Tweet\Extractor\TweetExtractor::class,
         ],
         // Use 'factories' for services provided by callbacks/factory classes.
         'factories' => [

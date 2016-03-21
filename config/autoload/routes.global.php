@@ -10,8 +10,7 @@ return [
             App\Action\HomePageAction::class => App\Action\HomePageFactory::class,
             App\Action\ReadTweetsAction::class => App\Action\ReadTweetsFactory::class,
             App\Action\ReplyTweetsAction::class => App\Action\ReplyTweetsFactory::class,
-
-
+            \App\Action\ListTweetsAction::class => \App\Action\ListTweetsFactory::class,
         ],
     ],
 
@@ -38,6 +37,12 @@ return [
             'name' => 'api.tweets.reply',
             'path' => '/api/tweets/reply',
             'middleware' => App\Action\ReplyTweetsAction::class,
+            'allowed_methods' => ['GET'],
+        ],
+        [
+            'name' => 'api.tweets',
+            'path' => '/api/tweets',
+            'middleware' => App\Action\ListTweetsAction::class,
             'allowed_methods' => ['GET'],
         ],
     ],
